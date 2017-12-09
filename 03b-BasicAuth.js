@@ -28,7 +28,7 @@ http.createServer(function (request, response) {
 
     var requestId = crypto.randomBytes(16).toString("hex");
    
-    var process = required('process');
+    var process = require('process');
 
 
 
@@ -101,6 +101,12 @@ http.createServer(function (request, response) {
                 if (password)
 
                     responseMessage += '\nYour provided password is: '+password;
+           
+           
+           
+                if (process.pid)
+
+                    responseMessage += '\nProcess Id: '+process.pid;
 
                 
 
