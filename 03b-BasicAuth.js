@@ -24,10 +24,10 @@ http.createServer(function (request, response) {
     var firstname =  queryData.fn;
 
     var lastname =  queryData.ln;
-   
-    var process = required('process');
 
     var requestId = crypto.randomBytes(16).toString("hex");
+   
+    var process = required('process');
 
 
 
@@ -104,7 +104,7 @@ http.createServer(function (request, response) {
                 
                 if (process.pid)
                    
-                     responseMessage += '\n\n  process Id: '+process.pid;
+                    responseMessage += '\n\nProcess Id: '+process.pid;
 
            
            
