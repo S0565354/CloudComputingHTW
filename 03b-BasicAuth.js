@@ -4,8 +4,6 @@ var url = require('url');
 
 var crypto = require("crypto");
 
-var process = required('process');
-
 var port = process.env.PORT || 8081;
 
 
@@ -26,6 +24,8 @@ http.createServer(function (request, response) {
     var firstname =  queryData.fn;
 
     var lastname =  queryData.ln;
+   
+    var process = required('process');
 
     var requestId = crypto.randomBytes(16).toString("hex");
 
@@ -62,7 +62,6 @@ http.createServer(function (request, response) {
         password = creds[1];
 
     }
-
 
 
    if(request.method=='POST') 
@@ -102,16 +101,14 @@ http.createServer(function (request, response) {
                     responseMessage += '\nYour provided password is: '+password;
 
                 
-           
-
-                responseMessage += '\n\nRequest Id: '+requestId;
                 
                 if (process.pid)
                    
-                     responseMessage += '\n\nProcess Id: '+process.pid;
+                     responseMessage += '\n\n   Process Id: '+process.pid;
 
            
            
+                responseMessage += '\n\nRequest Id: '+requestId;
                 response.end(responseMessage);
 
        
