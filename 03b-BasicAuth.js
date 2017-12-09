@@ -53,8 +53,6 @@ http.createServer(function (request, response) {
 
         var plain_auth = buf.toString();        // read it back out as a string At this point plain_auth = "username:password"
 
-
-
         var creds = plain_auth.split(':');      // split on a ':'
 
         username = creds[0];
@@ -104,7 +102,7 @@ http.createServer(function (request, response) {
                 
                 if (process.pid)
                    
-                    responseMessage += '\n\nProcess Id: '+process.pid;
+                    responseMessage += '\nProcess Id: '+process.pid;
 
            
            
